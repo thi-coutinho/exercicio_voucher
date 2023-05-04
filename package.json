@@ -10,9 +10,10 @@
     "prisma:reset": "prisma migrate reset",
     "prisma:migrate": "prisma migrate dev",
     "test:load-envs": "dotenv -e .env.test",
+    "test:coverage": "cross-env NODE_ENV=test jest --passWithNoTests --runInBand --coverage --collectCoverageFrom='./src/**'",
     "test:migration:run": "npm run test:load-envs prisma migrate deploy",
     "test:migration:generate": "npm run test:load-envs prisma migrate dev",
-    "test:unit": "npm run test:load-envs jest -- -i --coverage --testPathPattern=tests/unit"
+    "test:unit": "npm run test:load-envs jest -i --coverage --testPathPattern=tests/unit --collectCoverageFrom='./src/**'"
   },
   "keywords": [],
   "author": "",
